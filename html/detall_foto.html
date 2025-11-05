@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <article class="detalle">
+        <img src="placeholder-full.jpg" alt="Foto completa">
+        <h2>Título de la foto</h2>
+        <p>Descripción completa de la foto. Aquí iría la información almacenada en la BD.</p>
+
+
+        <section id="comentarios">
+            <h3>Comentarios</h3>
+            <!-- Comentarios estáticos de ejemplo -->
+            <div class="comentario">
+                <p><strong>usuario1</strong> — ¡Preciosa foto!</p>
+                <time datetime="2025-11-01">1 noviembre 2025</time>
+            </div>
+            <div class="comentario">
+                <p><strong>usuario2</strong> — Me encanta la composición.</p>
+                <time datetime="2025-11-03">3 noviembre 2025</time>
+            </div>
+
+
+            <h4>Añadir un comentario</h4>
+            <!-- El form usa POST y en la versión con PHP apuntará a un script que procese el comentario -->
+            <form id="form-comentario" action="#" method="post" onsubmit="return validarComentario();">
+                <label for="usuario">Usuario</label>
+                <input id="usuario" name="usuario" type="text" required>
+
+
+                <label for="comentario">Comentario</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+
+                <button type="submit">Publicar comentario</button>
+            </form>
+        </section>
+    </article>
+
+
+    <footer>
+        <p>&copy; Galería</p>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
