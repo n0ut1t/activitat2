@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Iniciar sesión</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="registro.html">Registro</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <form id="form-login" action="#" method="post" onsubmit="return validarLogin();">
+            <label for="username">Usuario</label>
+            <input id="username" name="username" type="text" required>
+
+
+            <label for="password">Contraseña</label>
+            <input id="password" name="password" type="password" required>
+
+
+            <button type="submit">Entrar</button>
+        </form>
+    </main>
+
+
+    <footer>
+        <p>&copy; Galería</p>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
