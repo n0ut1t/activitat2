@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Subir foto</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Subir foto</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="registro.html">Registro</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <section>
+            <p>Nota: en la versión final este formulario solo estará accesible para usuarios autenticados.</p>
+
+
+            <!-- IMPORTANTE: enctype="multipart/form-data" para enviar archivos -->
+            <form id="form-subida" action="#" method="post" enctype="multipart/form-data"
+                onsubmit="return validarSubida();">
+                <label for="titulo">Título</label>
+                <input id="titulo" name="titulo" type="text" required>
+
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+
+
+                <label for="archivo">Selecciona imagen (JPG, PNG, GIF)</label>
+                <input id="archivo" name="archivo" type="file" accept="image/png, image/jpeg, image/gif" required>
+
+
+                <button type="submit">Subir foto</button>
+            </form>
+
+
+            <div id="mensajes"></div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; Galería</p>
+    </footer>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
