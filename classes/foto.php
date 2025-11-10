@@ -2,8 +2,7 @@
 
 require_once __DIR__ . '/Db.php';
 
-class Foto
-{
+class Foto {
 
     private $db;
 
@@ -38,7 +37,7 @@ class Foto
         return $result;
     }
 
-    public function validarFoto()
+    public function validarFoto()//pujarfoto($fitxer)
     {
         //hay que comprobar que la exstension de la foto sea valida, hacer una vez sepa como cojer los datos
     }
