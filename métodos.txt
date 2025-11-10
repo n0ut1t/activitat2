@@ -1,0 +1,35 @@
+métodos clase fotos:
+
+	pujar fotos(): gestiona la pujada de dades de la imatge al servidor, valida el format i desa la imatge.
+
+	guardar foto(): desa la infrmacio de la foto a la base de dades.
+
+	get totes fotos(): recupera totes les fotos de la base de dades.
+
+	get foto perld($id): recupera una foto concreta a partir de l'id
+
+	mostrar miniatures(): retorna les miniatures de totes les fotos per mostrar la pagina d'inici.
+
+	mostrar detall(): mostra el detall complet d'una foto.
+
+métodos clase Comentari:
+	
+	Atributs: id, id_foto, id_usuari, comentari, data.
+	
+	guardar Comentari(): desa un nou comentari a la db
+
+	get comentari per foto($id_foto): recupera tots els comentaris associats a una foto concreta
+
+métodos clase Usuari:
+
+	Aquesta clase representa un usuari de l'aplicació
+
+	atributs: id, username, password, nom, cognoms
+	
+	singup(): registre un nou usuari
+
+	login(): controla el proces d'inici de sessio d'un usuari
+	
+	getFotos(): recupera totes les fotos d'un usuari
+
+	getNomCognoms(): retorna nom i cognoms de l'usuari

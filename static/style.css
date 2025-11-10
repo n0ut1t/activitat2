@@ -1,0 +1,10 @@
+/* clases para miniaturas */
+
+.miniatura{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 02s ease;
+}
