@@ -19,7 +19,7 @@ class Usuari
 
     public function signup($username, $password, $nom, $cognoms)
     {
-        $sql = "INSERT INTO usuaris (username, password, nom, cognoms)ç
+        $sql = "INSERT INTO usuaris (username, password, nom, cognoms)
                     VALUES ('$username','$password','$nom','$cognoms')";
 
         $result = $this->db->query($sql);

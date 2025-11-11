@@ -1,9 +1,63 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
   <meta charset="utf-8">
-  <title>Activitat 2</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galería - Inicio</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
-  
+  <header>
+    <h1>Galería de Fotos</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="pujar_foto.html">Subir foto</a>
+      <a href="/html/registro.php">Registro</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="galeria">
+      <!-- Bloques de ejemplo: en la versión con PHP se generarán dinámicamente -->
+      <article class="foto">
+        <a href="detall_foto.html">
+          <img src="placeholder-thumb.jpg" alt="Miniatura foto 1">
+          <h2>Título de la foto 1</h2>
+          <p>Breve descripción de la foto 1.</p>
+        </a>
+      </article>
+
+
+      <article class="foto">
+        <a href="detall_foto.html">
+          <img src="placeholder-thumb.jpg" alt="Miniatura foto 2">
+          <h2>Título de la foto 2</h2>
+          <p>Breve descripción de la foto 2.</p>
+        </a>
+      </article>
+
+
+      <!-- Paginación (estática) -->
+      <nav class="paginacion" aria-label="Paginación de fotos">
+        <a href="#">« Anterior</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">Siguiente »</a>
+      </nav>
+    </section>
+  </main>
+
+
+  <footer>
+    <p>&copy; Galería - Todos los derechos reservados</p>
+  </footer>
+
+
+  <script src="scripts.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,21 @@
+<?php
+    if(!empty($_POST)){
+        $nom = $_POST['nom'];
+        $cognoms = $_POST['cognoms'];
+        $username = $_POST['username_reg'];
+        $psw = $_POST['password_reg'];
+        
+        require __DIR__.'/../classes/Usuari.php';
+
+        $usuari = new Usuari();
+
+        if (!$usuari->signup($username, $psw, $nom, $cognoms)){
+            $error = "S'ha produit un error al inserir les dades";
+        } else{
+            header("Location: login.html");
+        }
+    } 
+?>
 <!doctype html>
 <html lang="es">
 
@@ -19,7 +37,7 @@
 
 
     <main>
-        <form id="form-registro" action="#" method="post" onsubmit="return validarRegistro();">
+        <form id="form-registro" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" onsubmit="return validarRegistro();">
             <label for="nom">Nombre</label>
             <input id="nom" name="nom" type="text" required>
 
@@ -37,6 +55,15 @@
 
 
             <button type="submit">Registrarse</button>
+            <?php
+
+					if (isset($error)) {
+						
+						echo "<div class=\"col-4 offset-4\">$error</div>";
+
+					}
+
+			?>
         </form>
     </main>
 
