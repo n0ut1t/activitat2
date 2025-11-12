@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Variables CSS para colores y temas */
+=======
+/* ====================== VARIABLES ====================== */
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 :root {
   --primary-color: #6366f1;
   --primary-hover: #4f46e5;
@@ -11,6 +15,7 @@
   --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.4);
   --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+<<<<<<< HEAD
 }
 
 /* Reset y estilos base */
@@ -19,6 +24,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+=======
+  --card-radius: 20px;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+}
+
+/* ====================== RESET & BASE ====================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +44,11 @@ body {
   line-height: 1.6;
 }
 
+<<<<<<< HEAD
 /* Header */
+=======
+/* ====================== HEADER ====================== */
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 header {
   background: var(--surface-dark);
   padding: 1.5rem 2rem;
@@ -38,6 +56,11 @@ header {
   border-bottom: 1px solid var(--border-color);
 }
 
+<<<<<<< HEAD
+=======
+header .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 header h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -46,7 +69,10 @@ header h1 {
   background-clip: text;
   color: transparent;
   margin-bottom: 1rem;
+<<<<<<< HEAD
   text-align: center;
+=======
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 nav {
@@ -64,16 +90,24 @@ nav a {
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
+<<<<<<< HEAD
   overflow: hidden;
+=======
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 nav a::before {
   content: '';
   position: absolute;
+<<<<<<< HEAD
   bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
+=======
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   background: var(--primary-color);
   transition: width 0.3s ease;
 }
@@ -83,6 +117,7 @@ nav a:hover {
   background: rgba(99, 102, 241, 0.1);
 }
 
+<<<<<<< HEAD
 nav a:hover::before {
   width: 100%;
 }
@@ -110,11 +145,63 @@ main {
 }
 
 #form-login:hover {
+=======
+nav a:hover::before { width: 100%; }
+
+/* ====================== MAIN & CONTAINER ====================== */
+main {
+  flex: 1;                           /* Ocupa el espacio disponible entre header y footer */
+  display: flex;                     /* Activa flexbox */
+  justify-content: center;           /* Centrado horizontal */
+  align-items: center;               /* Centrado vertical */
+  padding: 3rem 1rem;                /* Espacio alrededor */
+  min-height: 70vh;                 /* Garantiza centrado incluso en pantallas grandes */
+}
+
+.container {
+  max-width: 1200px;
+  left: 50%;
+}
+
+/* ====================== FORM CARD ====================== */
+.form-card {
+  left: 50%;
+  background: var(--surface-dark);
+  padding: 3rem 2.5rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 700px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.form-card:hover {
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
 
+<<<<<<< HEAD
 #form-login label {
+=======
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Form groups */
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
@@ -122,10 +209,17 @@ main {
   font-size: 0.95rem;
 }
 
+<<<<<<< HEAD
 #form-login input {
   width: 100%;
   padding: 1rem 1.2rem;
   margin-bottom: 1.5rem;
+=======
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   border: 2px solid var(--border-color);
   border-radius: 12px;
   background: var(--surface-light);
@@ -133,20 +227,60 @@ main {
   font-size: 1rem;
   transition: all 0.3s ease;
   outline: none;
+<<<<<<< HEAD
 }
 
 #form-login input:focus {
+=======
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   border-color: var(--primary-color);
   background: var(--surface-dark);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   transform: scale(1.02);
 }
 
+<<<<<<< HEAD
 #form-login input::placeholder {
   color: var(--text-secondary);
 }
 
 /* Button styles */
+=======
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+/* File input */
+.form-group input[type="file"] {
+  padding: 0.8rem 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: var(--primary-hover);
+}
+
+/* Submit button */
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 button[type="submit"] {
   width: 100%;
   padding: 1rem 2rem;
@@ -160,17 +294,28 @@ button[type="submit"] {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  margin-top: 1rem;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 button[type="submit"]::before {
   content: '';
   position: absolute;
+<<<<<<< HEAD
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s ease;
+=======
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 button[type="submit"]:hover {
@@ -178,6 +323,7 @@ button[type="submit"]:hover {
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
 }
 
+<<<<<<< HEAD
 button[type="submit"]:hover::before {
   left: 100%;
 }
@@ -369,6 +515,15 @@ main {
 }
 
 /* Galería */
+=======
+button[type="submit"]:hover::before { left: 100%; }
+
+/* Validación */
+input:valid { border-color: var(--success-color); }
+input:invalid:not(:focus):not(:placeholder-shown) { border-color: var(--error-color); }
+
+/* ====================== GALERÍA ====================== */
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 #galeria {
   max-width: 1200px;
   margin: 0 auto;
@@ -385,6 +540,10 @@ main {
   box-shadow: var(--shadow);
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+<<<<<<< HEAD
+=======
+  animation: fadeIn 0.6s ease-out;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 .foto:hover {
@@ -392,17 +551,22 @@ main {
   box-shadow: var(--shadow-hover);
 }
 
+<<<<<<< HEAD
 .foto a {
   text-decoration: none;
   color: inherit;
   display: block;
   height: 100%;
 }
+=======
+.foto a { text-decoration: none; color: inherit; display: block; }
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 
 .foto img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+<<<<<<< HEAD
   display: block;
   transition: transform 0.3s ease;
 }
@@ -425,6 +589,16 @@ main {
   font-size: 0.95rem;
   line-height: 1.5;
 }
+=======
+  transition: transform 0.3s ease;
+}
+
+.foto:hover img { transform: scale(1.05); }
+
+.foto h2, .foto p { padding: 0 1.2rem; }
+.foto h2 { padding-top: 1.2rem; font-size: 1.3rem; color: var(--text-primary); }
+.foto p { padding-bottom: 1.2rem; color: var(--text-secondary); font-size: 0.95rem; }
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 
 /* Paginación */
 .paginacion {
@@ -433,28 +607,98 @@ main {
   justify-content: center;
   gap: 0.5rem;
   margin-top: 2rem;
+<<<<<<< HEAD
   padding: 1rem;
 }
 
 .paginacion a {
   display: inline-block;
+=======
+  flex-wrap: wrap;
+}
+
+.paginacion a {
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
   padding: 0.7rem 1.2rem;
   background: var(--surface-light);
   color: var(--text-secondary);
   text-decoration: none;
   border-radius: 8px;
+<<<<<<< HEAD
   font-weight: 500;
   transition: all 0.3s ease;
   border: 1px solid var(--border-color);
+=======
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
 
 .paginacion a:hover {
   background: var(--primary-color);
   color: white;
   transform: translateY(-2px);
+<<<<<<< HEAD
   box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
 }
 
+=======
+}
+
+/* Mensajes */
+#mensajes {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--card-radius);
+  background: var(--surface-dark);
+  border: 1px solid var(--border-color);
+  min-height: 60px;
+}
+
+.mensaje-exito { color: var(--success-color); background: rgba(16,185,129,0.1); border-left: 4px solid var(--success-color); }
+.mensaje-error { color: var(--error-color); background: rgba(239,68,68,0.1); border-left: 4px solid var(--error-color); }
+.mensaje-exito, .mensaje-error { padding: 1rem; border-radius: 8px; }
+
+/* Nota info */
+.nota-info {
+  background: rgba(99,102,241,0.1);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0 8px 8px 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Preview */
+.preview-container { margin: 1.5rem 0; text-align: center; }
+.preview-imagen {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 12px;
+  border: 2px dashed var(--border-color);
+  padding: 1rem;
+  display: none;
+  object-fit: contain;
+  background: var(--surface-light);
+}
+.preview-imagen.mostrar { display: inline-block; }
+
+/* Texto pequeño */
+.texto-pequeño {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+.texto-pequeño a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.texto-pequeño a:hover { color: #818cf8; text-decoration: underline; }
+
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 /* Footer */
 footer {
   background: var(--surface-dark);
@@ -465,6 +709,7 @@ footer {
   margin-top: auto;
 }
 
+<<<<<<< HEAD
 /* Responsive design */
 @media (max-width: 768px) {
   header {
@@ -714,4 +959,26 @@ section p {
   .preview-imagen {
     max-height: 200px;
   }
+=======
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header { padding: 1rem; }
+  header h1 { font-size: 2rem; }
+  nav { gap: 1rem; }
+  .form-card { padding: 2rem 1.5rem; margin: 1rem; }
+  main { padding: 2rem 1rem; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.75rem; }
+  nav a { font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+  .form-card { padding: 1.5rem 1rem; }
+  button[type="submit"] { padding: 0.9rem; font-size: 1rem; }
+>>>>>>> 89cc2ad6267fd4df0df5bb03de45a122db5937ec
 }
