@@ -30,7 +30,7 @@
     <header>
         <h1>Registro de usuario</h1>
         <nav>
-            <a href="/index.html">Inicio</a>
+            <a href="/index.php">Inicio</a>
             <a href="/html/login.html">Login</a>
         </nav>
     </header>

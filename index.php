@@ -7,12 +7,21 @@
   <title>Galería - Inicio</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
-
+<!-- ====================================================================
+  HACER COOKIES PARA LA session PARA INICIAR SESION AUTOMATICAMNTE
+==================================================================== -->
 <body>
   <header>
     <h1>Galería de Fotos</h1>
+    <?php
+      session_start();
+      if (!empty($_SESSION)){
+        $nombre = $_SESSION["nom_usuari"];
+        echo "<p>$nombre</p>";
+      }
+    ?>
     <nav>
-      <a href="/index.html">Inicio</a>
+      <a href="/index.php">Inicio</a>
       <a href="/html/pujar_foto.php">Subir foto</a>
       <a href="/html/registro.php">Registro</a>
       <a href="/html/login.html">Login</a>

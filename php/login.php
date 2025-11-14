@@ -13,7 +13,7 @@
             $_SESSION["id"] = $usuari->getId();
             $_SESSION["nom_usuari"] = $usuari->getNomComplert();
 
-            header("Location: /../index.html");
+            header("Location: /../index.php");
         } else {
             header('Location: /../html/registro.php');
         }

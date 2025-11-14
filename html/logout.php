@@ -3,5 +3,5 @@
 
 	session_destroy();
 
-	header("Location: /../index.html?session=muerta");
+	header("Location: /../index.php?session=muerta");
 ?>
