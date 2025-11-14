@@ -30,8 +30,8 @@
     <header>
         <h1>Registro de usuario</h1>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="login.html">Login</a>
+            <a href="/index.html">Inicio</a>
+            <a href="/html/login.html">Login</a>
         </nav>
     </header>
 

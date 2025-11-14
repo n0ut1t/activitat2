@@ -2,7 +2,8 @@
 
 require_once __DIR__ . '/Db.php';
 
-class Foto {
+class Foto
+{
 
     private $db;
 
@@ -37,16 +38,88 @@ class Foto {
         return $result;
     }
 
-    public function validarFoto()//pujarfoto($fitxer)
+    public function pujarFoto($fitxer)//pujarfoto($fitxer)
     {
-        //hay que comprobar que la exstension de la foto sea valida, hacer una vez sepa como cojer los datos
+        // Compruebo que venga el fitxer
+        if (!isset($fitxer)) {
+            return ['ok' => false, 'msg' => 'No se ha enviado ningún fitxer.'];
+        }
+
+        // Comprobar errores de upload PHP
+        if (!isset($fitxer['error']) || $fitxer['error'] !== UPLOAD_ERR_OK) {
+            $code = isset($fitxer['error']) ? $fitxer['error'] : null;
+            $msg = $this->codigoErrorUpload($code);
+            return ['ok' => false, 'msg' => "Error en la subida: $msg"];
+        }
+
+        // Validar tamaño (ejemplo: 5MB máximo)
+        $maxBytes = 5 * 1024 * 1024;
+        if ($fitxer['size'] > $maxBytes) {
+            return ['ok' => false, 'msg' => 'El fitxer supera el tamaño máximo permitido (5MB).'];
+        }
+
+        // Validar extensión
+        $extensionesPermitidas = ['jpg', 'png', 'gif'];
+        $extension = strtolower(pathinfo($fitxer['name'], PATHINFO_EXTENSION));
+        if (!in_array($extension, $extensionesPermitidas)) {
+            return ['ok' => false, 'msg' => 'Extensión no permitida.'];
+        }
+
+        // Ruta absoluta o relativa donde quieres guardar.
+        // Recomiendo usar una ruta relativa fuera de la carpeta del proyecto si hace falta,
+        // pero para ejemplo usaré 'uploads/' en el directorio público.
+        $directorioDestino = __DIR__ . '/../static/img/'; // ajusta según estructura
+        if (!is_dir($directorioDestino)) {
+            if (!mkdir($directorioDestino, 0777, true)) {
+                return ['ok' => false, 'msg' => 'No se pudo crear la carpeta de destino. Comprueba permisos.'];
+            }
+        }
+
+        // Crear nombre único y seguro
+        $nombreUnico = uniqid('foto_', true) . '.' . $extension;
+        $rutaCompleta = $directorioDestino . $nombreUnico;
+
+        // Mover fitxer desde tmp a destino
+        if (!move_uploaded_file($fitxer['tmp_name'], $rutaCompleta)) {
+            return ['ok' => false, 'msg' => 'move_uploaded_file falló. Comprueba permisos y ruta.'];
+        }
+
+        // Devolver la ruta accesible desde el navegador (relativa a la raíz pública)
+        // Si uploads está en el mismo nivel que public/index.php, ajusta accordingly.
+        // En este ejemplo devolvemos la ruta relativa 'uploads/nombre.ext'
+        $rutaPublica = '/../static/img/' . $nombreUnico;
+
+        return ['ok' => true, 'ruta' => $rutaPublica, 'nombre' => $nombreUnico];
     }
 
-    public function guardarFoto($id_foto, $id_usuari, $titol, $descripcio, $ruta_foto, $data_pujada)
+    private function codigoErrorUpload($code)
+    {
+        switch ($code) {
+            case UPLOAD_ERR_INI_SIZE:
+                return 'El fitxer excede upload_max_filesize.';
+            case UPLOAD_ERR_FORM_SIZE:
+                return 'El fitxer excede MAX_FILE_SIZE del formulario.';
+            case UPLOAD_ERR_PARTIAL:
+                return 'El fitxer fue subido parcialmente.';
+            case UPLOAD_ERR_NO_FILE:
+                return 'No se subió ningún fitxer.';
+            case UPLOAD_ERR_NO_TMP_DIR:
+                return 'Falta la carpeta temporal.';
+            case UPLOAD_ERR_CANT_WRITE:
+                return 'Fallo al escribir el fitxer en disco.';
+            case UPLOAD_ERR_EXTENSION:
+                return 'Subida detenida por extensión.';
+            default:
+                return 'Error desconocido.';
+        }
+    }
+
+
+    public function guardarFoto($id_usuari, $titol, $descripcio, $nom_fixer, $ruta_foto, $data_pujada)
     {
 
-        $sql = "INSERT INTO fotos (id, id_usuari, titol, descripcio, nom_fixer, ruta_foto, data_pujada)
-                    VALUES ('$id_foto', '$id_usuari', '$titol', '$descripcio', '$ruta_foto', '$data_pujada')";
+        $sql = "INSERT INTO fotos (id_usuari, titol, descripcio, nom_fixer, ruta_foto, data_pujada)
+                    VALUES ('$id_usuari', '$titol', '$descripcio','$nom_fixer', '$ruta_foto', '$data_pujada')";
 
         $result = $this->db->query($sql);
 
@@ -80,7 +153,8 @@ class Foto {
         return $result;
     }
 
-    public function __destruct(){
+    public function __destruct()
+    {
         $this->db->close();
     }
 }

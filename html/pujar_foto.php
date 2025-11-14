@@ -12,9 +12,9 @@
     <header>
         <h1>Subir foto</h1>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="registro.html">Registro</a>
-            <a href="login.html">Login</a>
+            <a href="/index.html">Inicio</a>
+            <a href="/html/registro.php">Registro</a>
+            <a href="/html/login.html">Login</a>
         </nav>
     </header>
 
@@ -22,10 +22,10 @@
     <main>
         <section>
             <p>Nota: en la versión final este formulario solo estará accesible para usuarios autenticados.</p>
-
+  
 
             <!-- IMPORTANTE: enctype="multipart/form-data" para enviar archivos -->
-            <form id="form-subida" action="#" method="post" enctype="multipart/form-data"
+            <form id="form-subida" action="/../php/subir.php" method="post" enctype="multipart/form-data"
                 onsubmit="return validarSubida();">
                 <label for="titulo">Título</label>
                 <input id="titulo" name="titulo" type="text" required>
@@ -36,14 +36,22 @@
 
 
                 <label for="archivo">Selecciona imagen (JPG, PNG, GIF)</label>
-                <input id="archivo" name="archivo" type="file" accept="image/png, image/jpeg, image/gif" required>
+                <input id="archivo" name="archivo" type="file" required>
 
 
                 <button type="submit">Subir foto</button>
             </form>
 
 
-            <div id="mensajes"></div>
+            <div id="mensajes">
+                <?php
+                    if (!empty($_FILES)){
+                        print_r($_FILES['archivo']['tmp_name']);
+                        print_r($_FILES['archivo']['name']);
+                    }
+                ?>
+            </div>
+            
         </section>
     </main>
 

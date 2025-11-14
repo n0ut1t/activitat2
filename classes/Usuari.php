@@ -63,6 +63,10 @@ class Usuari
         return $result;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
     public function __destruct()
     {
         $this->db->close();
